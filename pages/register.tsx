@@ -1,18 +1,16 @@
-import { auth } from "@hooks/auth";
-import { useAuth } from "@hooks/useAuth";
+import { Register } from "@containers/register/Register";
+import { guest } from "@hooks/guest";
 import { HomeLayout } from "@layouts/HomeLayout";
 import type { NextPage } from "next";
 
 const Page: NextPage = () => {
-  const { user } = useAuth();
-
   return (
-    <HomeLayout title="Home">
+    <HomeLayout title="Register">
       <div className="flex-grow w-full h-0 flex justify-center items-center">
-        <h1 className="text-7xl text-gray-500">Hello {user?.email}</h1>
+        <Register />
       </div>
     </HomeLayout>
   );
 };
 
-export default auth(Page);
+export default guest(Page);

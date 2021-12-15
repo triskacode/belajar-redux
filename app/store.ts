@@ -4,17 +4,20 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { authSlice } from "./features/auth.slice";
 import { rtkQueryErrorLogger } from "./middlewares/rtk-query-error-logger.middleware";
 import { authApi } from "./services/auth";
+import { userApi } from "./services/user";
 
 export function createStore() {
   return configureStore({
     reducer: {
       auth: authSlice.reducer,
       [authApi.reducerPath]: authApi.reducer,
+      [userApi.reducerPath]: userApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware()
         .concat(rtkQueryErrorLogger)
-        .concat(authApi.middleware),
+        .concat(authApi.middleware)
+        .concat(userApi.middleware),
   });
 }
 

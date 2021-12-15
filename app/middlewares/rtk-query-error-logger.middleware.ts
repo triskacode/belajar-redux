@@ -1,3 +1,4 @@
+import { BaseException } from "@app/exceptions/base.exception";
 import {
   Middleware,
   MiddlewareAPI,

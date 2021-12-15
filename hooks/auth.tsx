@@ -33,7 +33,15 @@ export const auth = (WrappedComponent: React.FC) => {
       }
     }, [router, error]);
 
-    if (isLoading) return <>Loading</>;
+    if (isLoading)
+      return (
+        <div
+          className="flex items-center justify-center"
+          style={{ position: "fixed", top: 0, bottom: 0, right: 0, left: 0 }}
+        >
+          Loading
+        </div>
+      );
 
     return <WrappedComponent />;
   };
