@@ -8,7 +8,7 @@ export const userApi = createApi({
   reducerPath: "userApi",
   tagTypes: ["User"],
   baseQuery: BaseQuery.initiate({
-    baseUrl: process.env.API_BASE_URL + "/users",
+    baseUrl: process.env.NEXT_PUBLIC_API_URL + "/users",
     prepareHeaders: (headers, { getState }) => {
       const authToken = (getState() as RootState).auth.token?.accessToken;
 
