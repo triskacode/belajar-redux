@@ -27,7 +27,7 @@ const Page: NextPage = () => {
     return () => {
       socket.off("connect", handleConnect);
 
-      socket.emit("disconnect-to-server");
+      socket.emit("disconnect-from-server");
       socket.disconnect();
       setSocket(undefined);
     };

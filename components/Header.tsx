@@ -31,6 +31,9 @@ const HeaderElement: React.FC<HeaderProps> = ({ className }) => {
                 <Link href="/">Home</Link>
               </li>
               <li>
+                <Link href="/chat">Chat</Link>
+              </li>
+              <li>
                 <span
                   onClick={() => dispatch(logout())}
                   className="cursor-pointer"
